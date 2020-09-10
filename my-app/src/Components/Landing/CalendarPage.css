@@ -1,0 +1,155 @@
+.Overall {
+  text-align: center;
+  
+}
+
+H3 {height: 10px;
+    font-size: 12px;
+    float: left;
+}
+
+.logout{
+  float: left;
+  margin-left: 50px;
+  
+}
+
+.form-control {
+  height: 20px;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.container {
+  background-image: url(./logo.png);
+  background-image: initial;
+  float: right;
+}
+
+
+.Text-Styles {  
+
+  
+  
+  align-items: center;
+  justify-content: center;
+  
+  color: #446f80;
+  font-family: "Merienda One", cursive;
+  font-style: italic;
+  padding-bottom: 0px;
+  margin-bottom: 20px;}
+
+
+
+.enterzipcode {  
+
+  
+  
+  align-items: center;
+  justify-content: center;
+  
+  color: #446f80;
+  font-family: "Merienda One", cursive;
+  font-style: italic;
+  margin-right: 110px;
+  padding-bottom: 0px;
+  margin-bottom: 20px;}
+
+  .Text-Styles2 {  
+
+  
+  
+    align-items: center;
+    justify-content: center;
+    
+    color: #446f80;
+    font-family: "Merienda One", cursive;
+    font-style: italic;
+    padding-bottom: 0px;
+    margin-bottom: 40px;}
+
+    .Text-Styles3 {  
+
+  
+  
+      align-items: center;
+      justify-content: center;
+      color:#680d20;
+      font-family: "Merienda One", cursive;
+      font-style: italic;
+      padding-bottom: 0px;
+      margin-bottom: 20px;}
+  
+.App-header {
+
+  background-image: url(./logo.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(100px + 2vmin);
+  color: white;
+  font-family: "Merienda One", cursive;
+  font-style: italic;
+  padding-bottom: 0px;
+  margin-bottom: 40px;
+ 
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Customer {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+.bioButton {
+  margin-bottom: 20px;
+}
+
+.ZipEnter {
+  font-size: 15px ;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
