@@ -4,8 +4,7 @@ import "./CalendarPage.css";
 import axios from "axios";
 import Button from "../buttons/button.js";
 import Scheduler from "../Scheduler/scheduler.js";
-import Moment from 'react-moment'
-
+import Moment from "react-moment";
 
 function Calendar() {
   const [subject, setSubject] = useState("");
@@ -26,7 +25,7 @@ function Calendar() {
 
   const updateEvent = (ev) => {
     ev.preventDefault();
-    
+
     axios.post("http://localhost:8080/updateEvent", {
       // Id: 1,
       Subject: subject,
@@ -34,7 +33,6 @@ function Calendar() {
       StartTime: starttime,
       EndTime: endtime,
       // CategoryColor: color
-      
     });
   };
 
@@ -65,48 +63,51 @@ function Calendar() {
     <div className="Overall">
       <header className="App-header">Whenner</header>
       <aside>
-   <a href="/" className="logout" onClick={null}>LOGOUT</a>
-   
-</aside>
+        <a href="/" className="logout" onClick={null}>
+          LOGOUT
+        </a>
+      </aside>
 
       <h2 className="enterzipcode">Enter Zip Code</h2>
       <input
         className="ZipEnter"
         onChange={(event) => setTitle(event.target.value)}
       />
-      <Button label="Want to check the weather?"  onclick={getWeather} />
+      <Button label="Want to check the weather?" onclick={getWeather} />
 
       <main className="Customer">
         <form className="bio" onSubmit={updateEvent}>
           <div className="form-group">
-            <label aria-label="bio" className="Text-Styles" >
-            <h3>Event title</h3>
+            <label aria-label="bio" className="Text-Styles">
+              <h3>Event title</h3>
               <textarea
                 onChange={(ev) => setSubject(ev.target.value)}
                 className="form-control"
                 rows={5}
-              ></textarea><h3>Event location</h3>
+              ></textarea>
+              <h3>Event location</h3>
               <textarea
                 onChange={(ev) => setLocation(ev.target.value)}
                 className="form-control"
                 rows={5}
-              ></textarea><h3>Event start time</h3>
-              <textarea
-                onChange={(ev) => setStarttime(ev.target.value)}
-                className="form-control"
-                rows={5}
-              ></textarea>  <h3>Event end time</h3>
-              <textarea
-                onChange={(ev) => setEndtime(ev.target.value)}
-                className="form-control"
-                rows={5}
-              ></textarea>      
-                <input id="start-time" type="datetime-local" onChange={(e) => setStarttime(e.target.value) } id="meeting-time"
-       name="meeting-time" value={starttime} />
-                <input id="end-time" type="datetime-local" onChange={(e) => setEndtime(e.target.value) } id="meeting-time"
-       name="meeting-time" value={endtime} />
-                
-               
+              ></textarea>
+
+              <input
+                id="start-time"
+                type="datetime-local"
+                onChange={(e) => setStarttime(e.target.value)}
+                id="meeting-time"
+                name="meeting-time"
+                value={starttime}
+              />
+              <input
+                id="end-time"
+                type="datetime-local"
+                onChange={(e) => setEndtime(e.target.value)}
+                id="meeting-time"
+                name="meeting-time"
+                value={endtime}
+              />
             </label>
           </div>
           <button className="bioButton" type="submit">
