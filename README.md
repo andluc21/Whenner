@@ -5,7 +5,7 @@ A to-do list application with a twist! application will automatically schedule y
 
 ## Installation
 
-create .env file in the `backend` , place mongoDB srv key here to connect
+In the .env file inside the `backend` , place mongoDB srv key here to connect to database
 
 ```bash
 
