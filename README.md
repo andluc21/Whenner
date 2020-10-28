@@ -1,20 +1,22 @@
---------- whenner-ui ----------
 
-# cd into `my-app`
+# Whenner
 
-# npm install
+A to-do list application with a twist! application will automatically schedule your tasks and display them in a calendar view. Tasks are automatically moved-up in the schedule as predecessors are completed, or pushed-out as delays occur.
 
-# npm start
+## Installation
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+create .env file in the `backend` , place mongoDB srv key here to connect
 
-in another terminal
+```bash
 
-# cd into `backend`
+npm install     -  `my-app` folder
+npm install     - `backend` folder 
+```
+## Usage
 
-# npm install
+```
+npm start       -  `my-app` folder
+node server.js  - `backend` folder
 
-to start the server lastly
 
-# node server.js
+```
