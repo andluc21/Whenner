@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//const uri = process.env.ATLAS_URI;
+//create .env  and include `MONGODB_URI=(srv)` ;
 
 const connectDB = async () => {
   try {
