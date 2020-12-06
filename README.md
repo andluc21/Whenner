@@ -15,8 +15,8 @@ npm install     - `backend` folder
 ## Usage
 
 ```
-npm start       -  `my-app` folder
-node server.js  - `backend` folder
+`npm start` or `nodemon`       -  `my-app` folder
+`node server.js` or `nodemon`  - `backend` folder
 
 
 ```
