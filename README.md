@@ -9,8 +9,8 @@ In the .env file inside the `backend` , place mongoDB srv key here to connect to
 
 ```bash
 
-npm install     -  `my-app` folder
-npm install     - `backend` folder 
+`npm install`     -  `my-app` folder
+`npm install`     - `backend` folder 
 ```
 ## Usage
 
