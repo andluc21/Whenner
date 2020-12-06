@@ -7,6 +7,18 @@ const passport = require("passport");
 const googleStrategy = require("passport-google-oauth2").Strategy;
 const connectDB = require("./config/db");
 const moment = require("moment");
+const cookieParser = require('cookie-parser')
+const cookieSession = require('cookie-session');
+
+
+app.use(cookieSession({
+
+  name: 'test-session',
+  keys: ['123']
+
+}));
+
+app.use(cookieParser());
 
 const User = require("./models/userModel.js");
 const Event = require("./models/events.js");
@@ -23,7 +35,7 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, currentToken, refreshToken, profile, done) => {
-      console.log(profile);
+      //console.log(profile);
       // do something create or login?
       User.findOne(
         {
@@ -31,7 +43,7 @@ passport.use(
           email: profile.email,
         },
         function (error, user) {
-          console.log(user);
+          //console.log(done);
           if (!user) {
             User.create(
               {
@@ -43,7 +55,12 @@ passport.use(
               }
             );
           } else {
-            done(false, user);
+            console.log("user exists")
+            return done(false, {
+              profile: user,
+              refreshToken: refreshToken,
+              currentToken: currentToken
+            });
           }
 
           // return done(error, profile);
@@ -95,15 +112,28 @@ app.get("/good", isLoggedIn, (req, res) =>
 
 app.get(
   "/auth/example",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+  passport.authenticate("google", { scope: ["profile", "email"] }, (req, res) => {
+    console.log(res)
+    res.send("TEST")
+  })
 );
 
+/*
+{
+    failureRedirect: "/failed",
+    successRedirect: "http://localhost:3000/calendar",
+  }
+*/
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "/failed",
-    successRedirect: "http://localhost:3000/calendar",
-  })
+    failureRedirect: "/failed",}), (req, res) => {
+      console.log("Manual redirect")
+      console.log(req.user)
+    req.session.token = req.user.currentToken;
+    res.cookie('token', req.session.token);
+    res.redirect('http://localhost:3000/calendar');
+}
 );
 
 app.post("/api/login", (req, res) => {
@@ -124,10 +154,11 @@ app.get("/logout", (req, res) => {
 
 app.post("/updateEvent", (req, res) => {
   // fake user
-  // console.log(req.body)
+  //console.log(req.cookies)
+  console.log(req.session.token)
   let testDate = moment(req.body.StartTime);
   // console.log(testDate)
-  console.log(testDate.toDate());
+  //console.log(testDate.toDate());
   let { Subject, Location, StartTime, EndTime } = req.body;
   Event.create(
     {
@@ -138,7 +169,7 @@ app.post("/updateEvent", (req, res) => {
     }
     // { userName: 'anonymous' }
   ).then((event) => {
-    console.log(event);
+    //console.log(event);
     event.update(req.body);
   });
 });
