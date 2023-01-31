@@ -26,8 +26,3 @@ $ npm start
 
 # `backend` folder 
 $ node server.js
-
-
-
-
-
