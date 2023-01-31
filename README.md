@@ -18,14 +18,16 @@ $ npm install
 ```
 ## Usage
 
+Running `nodemon` in place of these commands will also work 
+
 ```bash
 # `my-app` folder
 $ npm start 
-# OR
-$ nodemon
 
 # `backend` folder 
 $ node server.js
-# OR
-$ nodemon
+
+
+
+
 
