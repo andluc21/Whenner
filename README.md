@@ -7,16 +7,25 @@ A to-do list application with a twist! application will automatically schedule y
 
 In the .env file inside the `backend` , place mongoDB srv key here to connect to database
 
-```bash
 
-`npm install`     -  `my-app` folder
-`npm install`     - `backend` folder 
+```bash
+# `my-app` folder
+$ npm install
+
+# `backend` folder 
+$ npm install
+
 ```
 ## Usage
 
-```
-`npm start` or `nodemon`       -  `my-app` folder
-`node server.js` or `nodemon`  - `backend` folder
+```bash
+# `my-app` folder
+$ npm start 
+OR
+$ nodemon
 
+# `backend` folder 
+$ node server.js
+OR
+$ nodemon
 
-```
