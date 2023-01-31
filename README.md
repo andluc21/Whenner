@@ -21,11 +21,11 @@ $ npm install
 ```bash
 # `my-app` folder
 $ npm start 
-OR
+# OR
 $ nodemon
 
 # `backend` folder 
 $ node server.js
-OR
+# OR
 $ nodemon
 
