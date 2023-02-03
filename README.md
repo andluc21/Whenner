@@ -1,4 +1,3 @@
-
 # Whenner
 
 A to-do list application with a twist! application will automatically schedule your tasks and display them in a calendar view. Tasks are automatically moved-up in the schedule as predecessors are completed, or pushed-out as delays occur.
